@@ -24,7 +24,7 @@ namespace FreeCell
         Ace = 1
     }
     public enum Color { Red, Black }
-    class Card
+    public class Card
     {
 
 
@@ -47,9 +47,9 @@ namespace FreeCell
             return new Card(mysuit, myrank);
         }
 
-        public bool IsPlaceable(Card other)
+        public bool IsPlaceOnTopable(Card placee)
         {
-            if (other.color != this.color && this.rank - 1 == other.rank)
+            if (placee.color != this.color && this.rank - 1 == placee.rank)
             {
                 return true;
             }

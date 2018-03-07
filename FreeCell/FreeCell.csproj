@@ -42,15 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Board.cs" />
-    <Compile Include="Card.cs" />
-    <Compile Include="Deck.cs" />
+    <Compile Include="GameModel\Board.cs" />
+    <Compile Include="GameModel\BoardStack.cs" />
+    <Compile Include="GameModel\Card.cs" />
+    <Compile Include="GameModel\CardStack.cs" />
+    <Compile Include="GameModel\Deck.cs" />
+    <Compile Include="GameModel\Foundation.cs" />
+    <Compile Include="GameModel\FreeSpace.cs" />
+    <Compile Include="GameModel\GameMove.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SolverLogic\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
