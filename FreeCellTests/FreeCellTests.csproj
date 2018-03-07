@@ -48,9 +48,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameModel\BoardTests.cs" />
     <Compile Include="UtilityClasses\RandomCard.cs" />
     <Compile Include="UtilityClasses\TestCardStack.cs" />
-    <Compile Include="Tests\GameMoveTests.cs" />
+    <Compile Include="GameModel\GameMoveTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

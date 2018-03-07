@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeCell
+namespace FreeCell.GameModel
 {
     public abstract class CardStack
     {

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="GameModel\Board.cs" />
     <Compile Include="GameModel\BoardStack.cs" />
+    <Compile Include="GameModel\BoardState.cs" />
     <Compile Include="GameModel\Card.cs" />
     <Compile Include="GameModel\CardStack.cs" />
     <Compile Include="GameModel\Deck.cs" />

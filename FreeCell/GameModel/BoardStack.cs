@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeCell
+namespace FreeCell.GameModel
 {
-    public class BoardStack : CardStack
+    public class Cascade : CardStack
     {
        
         public override string ErrorMessage => "Can't remove that many";
 
-        public BoardStack(List<Card> initialCards)
+        public Cascade(List<Card> initialCards)
         {
             CardList = initialCards;
         }

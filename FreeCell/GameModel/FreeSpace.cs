@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeCell
+namespace FreeCell.GameModel
 {
-    class FreeSpace : CardStack
+    public class FreeSpace : CardStack
     {
         public FreeSpace()
         {

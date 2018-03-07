@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeCell
+namespace FreeCell.GameModel
 {
     class Deck
     {
-        public List<Card> cards { get; set; }
+        public List<Card> Cards { get; set; }
 
         public Deck()
         {
-            cards = new List<Card>();
+            Cards = new List<Card>();
             foreach (Suit s in Enum.GetValues(typeof(Suit)))
             {
                 for(Rank i = Rank.Ace; i <= Rank.King ; i++)
                 {
                     Card card = new Card(s, i);
-                    cards.Add(card);
+                    Cards.Add(card);
                 }
             }
         }
@@ -26,7 +26,7 @@ namespace FreeCell
         public void Shuffle()
         {
             Random r = new Random();
-            cards = cards.OrderBy(i => r.Next()).ToList();
+            Cards = Cards.OrderBy(i => r.Next()).ToList();
         }
 
     }

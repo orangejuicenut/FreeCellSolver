@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FreeCell
+namespace FreeCell.GameModel
 {
-    class Foundation : CardStack
+    public class Foundation : CardStack
     {
         public Card getTop()
         {
