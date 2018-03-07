@@ -1,0 +1,9 @@
+C:\Dev\FreeCell\FreeCell\bin\Debug\FreeCell.exe.config
+C:\Dev\FreeCell\FreeCell\bin\Debug\FreeCell.exe
+C:\Dev\FreeCell\FreeCell\bin\Debug\FreeCell.pdb
+C:\Dev\FreeCell\FreeCell\bin\Debug\Newtonsoft.Json.dll
+C:\Dev\FreeCell\FreeCell\bin\Debug\Newtonsoft.Json.xml
+C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.csprojResolveAssemblyReference.cache
+C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.csproj.CoreCompileInputs.cache
+C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.exe
+C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.pdb
