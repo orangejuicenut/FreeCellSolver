@@ -7,3 +7,10 @@ C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.csprojResolveAssemblyReference.cache
 C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.csproj.CoreCompileInputs.cache
 C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.exe
 C:\Dev\FreeCell\FreeCell\obj\Debug\FreeCell.pdb
+C:\Dev\FreeCellSolver\FreeCell\bin\Debug\FreeCell.exe.config
+C:\Dev\FreeCellSolver\FreeCell\bin\Debug\FreeCell.exe
+C:\Dev\FreeCellSolver\FreeCell\bin\Debug\FreeCell.pdb
+C:\Dev\FreeCellSolver\FreeCell\obj\Debug\FreeCell.csprojResolveAssemblyReference.cache
+C:\Dev\FreeCellSolver\FreeCell\obj\Debug\FreeCell.csproj.CoreCompileInputs.cache
+C:\Dev\FreeCellSolver\FreeCell\obj\Debug\FreeCell.exe
+C:\Dev\FreeCellSolver\FreeCell\obj\Debug\FreeCell.pdb
