@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameModel\BoardTests.cs" />
+    <Compile Include="GameModel\CardStackTests.cs" />
     <Compile Include="UtilityClasses\RandomCard.cs" />
     <Compile Include="UtilityClasses\TestCardStack.cs" />
     <Compile Include="GameModel\GameMoveTests.cs" />

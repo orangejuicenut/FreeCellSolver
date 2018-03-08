@@ -65,7 +65,7 @@ namespace FreeCell.GameModel.Tests
             {
                 Assert.IsTrue(board.Foundations[s].CardList.SequenceEqual(boardState1.Foundations[s]));
             }
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
 
             }
@@ -75,7 +75,14 @@ namespace FreeCell.GameModel.Tests
         [TestMethod()]
         public void DoMoveUndoMoveTest()
         {
-            Assert.Fail();
+            BoardState initState = board.GetBoardState();
+            GameMove move = new GameMove(board.Cascades[0], board.FreeSpaces[0], 1);
+            board.DoMove(move);
+            BoardState afterMoveState = board.GetBoardState();
+            Assert.IsFalse(initState.Equals(afterMoveState));
+            board.UndoMove();
+            BoardState afterUndoState = board.GetBoardState();
+            Assert.IsTrue(afterUndoState.Equals(initState));
         }
 
 

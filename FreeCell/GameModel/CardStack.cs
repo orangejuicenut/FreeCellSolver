@@ -9,6 +9,15 @@ namespace FreeCell.GameModel
     public abstract class CardStack
     {
 
+        public Card GetCard(int levelDeep)
+        {
+            if (levelDeep >= CardList.Count)
+            {
+                throw new Exception("Can't get beyond the depth of this Stack");
+            }
+            return CardList[CardList.Count-1 - levelDeep];
+        }
+
         public abstract String ErrorMessage { get; }
         public List<Card> CardList { get; set; }
         public List<Card> Remove(int numberToRemove)

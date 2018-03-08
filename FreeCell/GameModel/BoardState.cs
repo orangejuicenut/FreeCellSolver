@@ -42,7 +42,13 @@ namespace FreeCell.GameModel
 
         public bool Equals(BoardState otherState)
         {
-            bool cascsEqual = Cascades.SequenceEqual(otherState.Cascades);
+            bool cascsEqual = true;// Cascades.SequenceEqual(otherState.Cascades);
+
+            for(int i = 0; i < Cascades.Count; i++)
+            {
+                cascsEqual = cascsEqual && Cascades[i].SequenceEqual(otherState.Cascades[i]);
+            }
+
             bool foundEqual = true;
             foreach(Suit s in Foundations.Keys)
             {
