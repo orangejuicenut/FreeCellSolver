@@ -8,7 +8,7 @@ namespace FreeCell.GameModel
 {
     public class Foundation : CardStack
     {
-        public Card getTop()
+        public Card GetTop()
         {
             if (CardList.Count == 0)
             {
@@ -23,6 +23,11 @@ namespace FreeCell.GameModel
             return 0;
         }
 
+        public bool CheckVictory()
+        {
+            return CardList.Count == 13;
+        }
+
         public override bool IsPlaceable(List<Card> cards)
         {
             if (cards.Count != 1)
@@ -30,7 +35,12 @@ namespace FreeCell.GameModel
                 return false;
             }
             Card placee = cards[0];
-            if (placee.suit == suit && getTop().rank + 1 == placee.rank)
+            if (CardList.Count==0 && placee.suit == suit && placee.rank == Rank.Ace)
+            {
+                return true;
+            }
+            
+            if (CardList.Count != 0 && placee.suit == suit && GetTop().rank + 1 == placee.rank)
             {
                 return true;
             }

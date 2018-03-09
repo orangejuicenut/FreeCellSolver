@@ -20,6 +20,12 @@ namespace FreeCell.GameModel
 
         public abstract String ErrorMessage { get; }
         public List<Card> CardList { get; set; }
+
+        public List<Card> GetCardsFromTop(int numberToGet)
+        {
+            List<Card> toRet = CardList.GetRange(CardList.Count - numberToGet, numberToGet);
+            return toRet;
+        }
         public List<Card> Remove(int numberToRemove)
         {
             if (numberToRemove > MaxNumberRemovable())

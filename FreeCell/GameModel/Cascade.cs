@@ -18,6 +18,10 @@ namespace FreeCell.GameModel
 
         public override bool IsPlaceable(List<Card> cards)
         {
+            if(CardList.Count == 0)
+            {
+                return true;
+            }
             return CardList.Last().IsPlaceOnTopable(cards[0]);
         }
 
@@ -28,7 +32,7 @@ namespace FreeCell.GameModel
                 return CardList.Count;
             }
             int count = 1;
-            for (int i = CardList.Count - 1; i >= 0; i--)
+            for (int i = CardList.Count - 1; i > 0; i--)
             {
                 if (CardList[i - 1].IsPlaceOnTopable(CardList[i]))
                 {

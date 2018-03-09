@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameModel\Board.cs" />
-    <Compile Include="GameModel\BoardStack.cs" />
+    <Compile Include="GameModel\Cascade.cs" />
     <Compile Include="GameModel\BoardState.cs" />
     <Compile Include="GameModel\Card.cs" />
     <Compile Include="GameModel\CardStack.cs" />
@@ -53,6 +53,8 @@
     <Compile Include="GameModel\GameMove.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolverLogic\BoardStateCompare.cs" />
+    <Compile Include="SolverLogic\FreeCellGameSolver.cs" />
     <Compile Include="SolverLogic\SolverUtilities.cs" />
   </ItemGroup>
   <ItemGroup>

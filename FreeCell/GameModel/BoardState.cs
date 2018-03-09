@@ -44,16 +44,22 @@ namespace FreeCell.GameModel
         {
             bool cascsEqual = true;// Cascades.SequenceEqual(otherState.Cascades);
 
-            for(int i = 0; i < Cascades.Count; i++)
+            for (int i = 0; i < Cascades.Count; i++)
             {
                 cascsEqual = cascsEqual && Cascades[i].SequenceEqual(otherState.Cascades[i]);
             }
 
-            bool foundEqual = true;
-            foreach(Suit s in Foundations.Keys)
-            {
-                foundEqual = foundEqual && (Foundations[s].SequenceEqual(otherState.Foundations[s]));
-            }
+
+            Suit s = Suit.Spades;
+            bool foundEqualSpades = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
+            s = Suit.Clubs;
+            bool foundEqualClubs = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
+            s = Suit.Diamonds;
+            bool foundEqualDiamonds = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
+            s = Suit.Hearts;
+            bool foundEqualHearts = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
+
+            bool foundEqual = foundEqualSpades && foundEqualClubs && foundEqualHearts && foundEqualDiamonds;
             bool spaceEqual = FreeSpaces.SequenceEqual(otherState.FreeSpaces);
 
             return cascsEqual && foundEqual && spaceEqual;

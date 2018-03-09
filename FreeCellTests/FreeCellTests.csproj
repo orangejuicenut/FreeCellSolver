@@ -50,6 +50,10 @@
   <ItemGroup>
     <Compile Include="GameModel\BoardTests.cs" />
     <Compile Include="GameModel\CardStackTests.cs" />
+    <Compile Include="GameModel\FoundationTests.cs" />
+    <Compile Include="GameModel\FreeSpaceTests.cs" />
+    <Compile Include="SolverLogic\FreeCellGameSolverTests.cs" />
+    <Compile Include="SolverLogic\SolverUtilitiesTests.cs" />
     <Compile Include="UtilityClasses\RandomCard.cs" />
     <Compile Include="UtilityClasses\TestCardStack.cs" />
     <Compile Include="GameModel\GameMoveTests.cs" />

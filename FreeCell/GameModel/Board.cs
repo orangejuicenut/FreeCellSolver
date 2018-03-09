@@ -54,6 +54,32 @@ namespace FreeCell.GameModel
 
         }
 
+        public bool CheckVictory()
+        {
+            //bool toRet = true;
+            foreach(Foundation found in Foundations.Values)
+            {
+                if(found.CheckVictory() == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public int GetFreeSpaces()
+        {
+            int free = 0;
+            foreach(FreeSpace space in FreeSpaces)
+            {
+                if (space.IsFree())
+                {
+                    free++;
+                }
+            }
+            return free;
+        }
+
         public BoardState GetBoardState()
         {
             return new BoardState(Cascades, Foundations, FreeSpaces);
@@ -61,6 +87,10 @@ namespace FreeCell.GameModel
 
         public void DoMove(GameMove move)
         {
+            if(move.numberToMove > GetFreeSpaces() + 1)
+            {
+                throw new Exception("Not enough free spaces");
+            }
             MoveList.Push(move);
             move.DoMove();
         }

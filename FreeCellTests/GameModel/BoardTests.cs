@@ -60,16 +60,6 @@ namespace FreeCell.GameModel.Tests
             BoardState boardState1 = board.GetBoardState();
             BoardState boardState2 = board.GetBoardState();
             Assert.AreEqual(true, boardState1.Equals(boardState2));
-
-            foreach (Suit s in board.Foundations.Keys)
-            {
-                Assert.IsTrue(board.Foundations[s].CardList.SequenceEqual(boardState1.Foundations[s]));
-            }
-            for (int i = 0; i < 4; i++)
-            {
-
-            }
-
         }
 
         [TestMethod()]
