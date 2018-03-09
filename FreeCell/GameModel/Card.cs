@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FreeCell.GameModel
 {
-    public enum Suit { Spades, Hearts, Diamonds,  Clubs }
+    public enum Suit { Spades, Hearts, Diamonds, Clubs }
     public enum Rank : int
     {
         King = 13,
@@ -27,6 +27,51 @@ namespace FreeCell.GameModel
     public class Card
     {
 
+        public String ToPrintString()
+        {
+            String toRet = "";
+            if (mysuit == Suit.Spades)
+            {
+                toRet = '\u2660' + toRet;
+            }
+            else if (mysuit == Suit.Hearts)
+            {
+                toRet = '\u2665' + toRet;
+            }
+            else if (mysuit == Suit.Diamonds)
+            {
+                toRet = '\u2666' + toRet;
+            }
+            else if (mysuit == Suit.Clubs)
+            {
+                toRet = '\u2663' + toRet;
+            }
+            if (myrank >= Rank.Two && myrank <= Rank.Nine)
+            {
+                toRet = " " + (int)myrank + toRet;
+            }
+            else if (myrank == Rank.Ace)
+            {
+                toRet = " A" + toRet;
+            }
+            else if (myrank == Rank.Ten)
+            {
+                toRet = "10" + toRet;
+            }
+            else if (myrank == Rank.Jack)
+            {
+                toRet = " J" + toRet;
+            }
+            else if (myrank == Rank.Queen)
+            {
+                toRet = " Q" + toRet;
+            }
+            else if (myrank == Rank.King)
+            {
+                toRet = " K" + toRet;
+            }
+            return toRet;
+        }
 
         private Suit mysuit;
         private Rank myrank;

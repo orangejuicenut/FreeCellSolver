@@ -24,9 +24,13 @@ namespace FreeCell.SolverLogic
 
         public void SolveAll()
         {
-            while(board.CheckVictory()!= true)
+            SolverUtilities.PrintBoard(board);
+            while (board.CheckVictory()!= true)
             {
                 SingleStep();
+                Console.ReadKey();
+                SolverUtilities.PrintBoard(board);
+                
             }
         }
         public void SingleStep()

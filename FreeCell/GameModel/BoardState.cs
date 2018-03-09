@@ -14,7 +14,7 @@ namespace FreeCell.GameModel
         {
             this.Cascades = new List<List<Card>>();
             this.Foundations = new Dictionary<Suit, List<Card>>();
-            this.FreeSpaces = new List<Card>();
+            this.FreeSpaces = new HashSet<Card>();
 
             foreach (Cascade casc in Cascades)
             {
@@ -38,31 +38,65 @@ namespace FreeCell.GameModel
         }
         public List<List<Card>> Cascades { get; set; }
         public Dictionary<Suit, List<Card>> Foundations { get; set; }
-        public List<Card> FreeSpaces { get; set; }
+        public HashSet<Card> FreeSpaces { get; set; }
 
         public bool Equals(BoardState otherState)
         {
-            bool cascsEqual = true;// Cascades.SequenceEqual(otherState.Cascades);
+            //bool cascsEqual = true;// Cascades.SequenceEqual(otherState.Cascades);
 
+            Suit s = Suit.Spades;
+            if (!Foundations[s].SequenceEqual(otherState.Foundations[s]))
+            {
+                return false;
+            }
+            s = Suit.Clubs;
+            if (!Foundations[s].SequenceEqual(otherState.Foundations[s]))
+            {
+                return false;
+            }
+            s = Suit.Diamonds;
+            if (!Foundations[s].SequenceEqual(otherState.Foundations[s]))
+            {
+                return false;
+            }
+            s = Suit.Hearts;
+            if (!Foundations[s].SequenceEqual(otherState.Foundations[s]))
+            {
+                return false;
+            }
+
+            if (!FreeSpaces.SetEquals(otherState.FreeSpaces))
+            {
+                return false;
+            }
+
+
+            foreach (List<Card> casc in this.Cascades)
+            {
+                bool isMatch = false;
+                foreach (List<Card> other in otherState.Cascades)
+                {
+                    if (other.SequenceEqual(casc))
+                    {
+                        isMatch = true;
+                    }
+                }
+                if (!isMatch)
+                {
+                    return false;
+                }
+            }
+
+            /*
             for (int i = 0; i < Cascades.Count; i++)
             {
                 cascsEqual = cascsEqual && Cascades[i].SequenceEqual(otherState.Cascades[i]);
             }
+            */
 
+        
 
-            Suit s = Suit.Spades;
-            bool foundEqualSpades = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
-            s = Suit.Clubs;
-            bool foundEqualClubs = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
-            s = Suit.Diamonds;
-            bool foundEqualDiamonds = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
-            s = Suit.Hearts;
-            bool foundEqualHearts = (Foundations[s].SequenceEqual(otherState.Foundations[s]));
-
-            bool foundEqual = foundEqualSpades && foundEqualClubs && foundEqualHearts && foundEqualDiamonds;
-            bool spaceEqual = FreeSpaces.SequenceEqual(otherState.FreeSpaces);
-
-            return cascsEqual && foundEqual && spaceEqual;
+            return true;
         }
 
     }

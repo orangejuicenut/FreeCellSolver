@@ -14,7 +14,7 @@ namespace FreeCell.GameModel
         public Dictionary<Suit, Foundation> Foundations { get; set; }
         public FreeSpace[] FreeSpaces { get; set; }
 
-        private Stack<GameMove> MoveList = new Stack<GameMove>();
+        public Stack<GameMove> MoveList = new Stack<GameMove>();
         public Board()
         {
             deck.Shuffle();
